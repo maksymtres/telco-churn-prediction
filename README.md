@@ -92,3 +92,43 @@ source .venv/bin/activate
 pip install -U pip
 pip install pandas numpy scikit-learn xgboost optuna shap phik matplotlib seaborn jupyter
 ```
+
+### Run the notebook
+
+1. Put CSV files into datasets/ (or update paths in the notebook).
+
+2. Start Jupyter:
+```bash
+jupyter lab
+```
+3. Open:
+
+Final project - done.ipynb
+
+### Project structure (suggested)
+```text
+.
+├─ datasets/
+│  ├─ contract_new.csv
+│  ├─ personal_new.csv
+│  ├─ internet_new.csv
+│  └─ phone_new.csv
+├─ Final project - done.ipynb
+└─ README.md
+```
+## Future improvements (next steps)
+
+- Reduce false negatives (FN): tune the probability threshold based on business costs and evaluate Recall/Precision + PR-AUC.
+
+- Try class imbalance strategies (class weights, sampling) and compare churn recall.
+
+- Probability calibration (Platt scaling / isotonic) to make predicted probabilities more reliable for retention scoring.
+
+- Make the solution more reproducible:
+
+  - add requirements.txt
+
+  - refactor notebook into src/ with training + inference scripts
+
+  - save the trained pipeline (joblib) and provide an inference example
+
