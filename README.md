@@ -92,39 +92,3 @@ source .venv/bin/activate
 pip install -U pip
 pip install pandas numpy scikit-learn xgboost optuna shap phik matplotlib seaborn jupyter
 ```
-
-Project structure (expected)
-.
-├─ datasets/                  # not included in the repo
-│  ├─ contract_new.csv
-│  ├─ personal_new.csv
-│  ├─ internet_new.csv
-│  └─ phone_new.csv
-├─ Final project - done.ipynb
-└─ README.md
-
-Run the notebook
-jupyter lab
-
-
-Open Final project - done.ipynb.
-
-Future improvements
-
-Reduce false negatives (FN): tune the probability threshold based on business costs and evaluate Recall/Precision + PR-AUC.
-
-Try class imbalance strategies (class weights, sampling) and compare churn recall.
-
-Probability calibration (Platt scaling / isotonic) to make predicted probabilities more reliable for retention scoring.
-
-Make the solution more reproducible:
-
-add requirements.txt
-
-refactor notebook into src/ with training + inference scripts
-
-save the trained pipeline (joblib) and provide an inference example
-
-License
-
-For educational and portfolio use.
